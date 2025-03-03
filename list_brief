@@ -1,1 +1,21 @@
-This file will have brief of all commands
+1. git add . => to add all files
+
+2. git log => to see all git logs
+
+3. git clone "" => creates copy of entire repository do first time in project
+
+3. git fetch origin => if you want to see the changes in repo without changing local code
+
+4. git pull origin main => this is the combination of fetch and merge it will download changes and merge into local repo
+
+5. git branch => to show all branches
+
+6. git merge branchName => to merge that branch into current branch
+
+7. git revert commitValue => to revert changes
+
+8. git stash => if you want to do not commit changes and move to other branch then use git stash 
+
+9. git rm fileName => if you want to remove file from repo and local
+
+10. git log --stat => Along with the ordin (stash) Along with the ordinary git log information, include which files were altered and the relative number of  lines that were added or deleted from each of them.
