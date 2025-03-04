@@ -19,3 +19,4 @@
 9. git rm fileName => if you want to remove file from repo and local
 
 10. git log --stat => Along with the ordin (stash) Along with the ordinary git log information, include which files were altered and the relative number of  lines that were added or deleted from each of them.
+11.
