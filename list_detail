@@ -54,4 +54,11 @@
 24. git rm --cached fileName => if you want to remove file from repo but not locally
 
 25. git log --stat => Along with the ordin (stash) Along with the ordinary git log information, include which files were altered and the relative number of  lines that were added or deleted from each of them.
-26.
+
+
+
+26. 
+Mode	        HEAD	                Index	                Working Directory	Changes After Commit
+--soft	        Moved to commit	        Unchanged	        Unchanged	        Kept in index
+--mixed	        Moved to commit	        Reset to commit	        Unchanged	        Unstaged, kept
+--hard	        Moved to commit	        Reset to commit	        Reset to commit	        Discarded
