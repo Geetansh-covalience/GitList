@@ -54,4 +54,123 @@
 24. git rm --cached fileName => if you want to remove file from repo but not locally
 
 25. git log --stat => Along with the ordin (stash) Along with the ordinary git log information, include which files were altered and the relative number of  lines that were added or deleted from each of them.
-26.
+
+
+26. 
+Mode	        HEAD	                        Index	                Working Directory	                Changes After Commit
+--soft	        Moved to commit	                Unchanged	        Unchanged	                        Kept in index
+--mixed	        Moved to commit	                Reset to commit	        Unchanged	                        Unstaged, kept
+--hard	        Moved to commit	                Reset to commit	        Reset to commit	                        Discarded
+
+
+
+
+
+
+27. 
+git add
+Subcommand	                Example	                                                Description
+-A	                        git add -A	                                        Add all changes to the staging area
+-p	                        git add -p	                                        Interactively add parts of files
+--interactive	                git add --interactive	                                Interactively stage files
+
+git mv
+Subcommand	                Example	                                                Description
+-f	                        git mv -f old.txt new.txt	                        Forcefully rename a file
+-k	                        git mv -k old.txt new.txt	                        Skip move or rename errors
+-n	                        git mv -n old.txt new.txt	                        Do not move or rename, just show what would be moved
+
+git restore
+Subcommand	                Example	                                                Description
+--staged	                git restore --staged file.txt	                        Restore a file from the staging area
+--source	                git restore --source commit_hash file.txt	        Restore from a given commit
+-W	                        git restore -W file.txt	                                Restore the working directory
+
+git rm
+Subcommand	                Example	                                                Description
+-f	                        git rm -f file.txt	                                Force removal
+-r	                        git rm -r folder/	                                Remove directories recursively
+--cached	                git rm --cached file.txt	                        Remove from the index only
+
+git bisect
+Subcommand	                Example	                                                Description
+start	                        git bisect start	                                Start binary search to find a buggy commit
+bad	                        git bisect bad	                                        Mark the current commit as bad
+good	                        git bisect good commit_hash	                        Mark the current commit as good
+reset	                        git bisect reset	                                Reset the bisect state
+visualize	                git bisect visualize	                                Visualize the bisect state
+
+git diff
+Subcommand	                Example	                                                Description
+--cached	                git diff --cached	                                Show changes between the index and the last commit
+--stat	                        git diff --stat	                                        Show statistics of changes
+-p	                        git diff -p	                                        Show patch format
+--name-only	                git diff --name-only	                                Show file names only
+
+git grep
+Subcommand	                Example	                                                Description
+-i	                        git grep -i "pattern"	                                Search for a case-insensitive pattern in files
+-v	                        git grep -v "pattern"	                                Invert match
+--files-with-matches	        git grep --files-with-matches "pattern"	                Show matching files only
+-n	                        git grep -n "pattern"	                                Show line numbers
+
+git log
+Subcommand	                Example	                                                Description
+-p	                        git log -p	                                        Show patches
+--stat	                        git log --stat	                                        Show statistics
+--oneline	                git log --oneline	                                Show one commit per line
+--graph	                        git log --graph	                                        Show graphical representation
+
+git show
+Subcommand	                Example	                                                Description
+--stat	                        git show --stat commit_hash	                        Show statistics
+--pretty	                git show --pretty=short commit_hash	                Show commit details in a short format
+--format	                git show --format=raw commit_hash	                Show custom format
+
+git status
+Subcommand	                Example	                                                Description
+-s	                        git status -s	                                        Show a short status of the working tree
+-b	                        git status -b	                                        Show branch information
+--porcelain	                git status --porcelain	                                Machine-readable format
+-uno	                        git status -uno	                                        Do not show untracked files
+
+git backfill
+Subcommand	                Example	                                                Description
+--full	                        git backfill --full	                                Download all missing objects
+--missing	                git backfill --missing object_hash	                Download specific missing objects
+
+git branch
+Subcommand	                Example	                                                Description
+-v	                        git branch -v	                                        List all branches with verbose output
+-r	                        git branch -r	                                        List remote branches
+-a	                        git branch -a	                                        List all branches
+-d	                        git branch -d old_branch	                        Delete a branch
+
+git commit
+Subcommand	                Example	                                                Description
+-m	                        git commit -m "message"	                                Commit changes with a message
+--amend	                        git commit --amend	                                Amend the previous commit
+--no-edit	                git commit --no-edit	                                Use the previous commit message
+-a	                        git commit -a	                                        Automatically stage all modified files
+
+git merge
+Subcommand	                Example	                                                Description
+--no-ff	                        git merge --no-ff branch_name	                        Create a merge commit even if it could be fast-forwarded
+--squash	                git merge --squash branch_name	                        Merge but do not commit
+--strategy	                git merge --strategy=ours branch_name	                Use the given merge strategy
+--abort	                        git merge --abort	                                Abort the merge process
+
+git rebase
+Subcommand	                Example	                                                Description
+-i	                        git rebase -i HEAD~3	                                Interactively rebase the last 3 commits
+-p	                        git rebase -p	                                        Preserve merges
+--onto	                        git rebase --onto new_base old_base	                Rebase onto another branch
+--abort	                        git rebase --abort	                                Abort the rebase process
+--continue	                git rebase --continue	                                Continue the rebase process
+
+git reset
+Subcommand	                Example	                                                Description
+--soft	                        git reset --soft commit_hash	                        Keep changes in the working directory and the index
+--hard	                        git reset --hard commit_hash	                        Discard all changes
+--mixed	                        git reset --mixed commit_hash	                        Keep changes in the working directory
+--keep	                        git reset --keep commit_hash	                        Keep uncommitted changesq
