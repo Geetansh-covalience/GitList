@@ -195,7 +195,7 @@ git switch
 =================
 Subcommand	                Example	                                                Description
 -c	                        git switch -c new_branch	                        Create and switch to a new branch
--	                        git switch -	                                        Switch to the previous branch
+-                               git switch -	                                        Switch to the previous branch
 -d	                        git switch -d old_branch	                        Delete a branch
 
 git tag
