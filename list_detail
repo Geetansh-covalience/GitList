@@ -189,7 +189,6 @@ Subcommand	                Example	                                             
 --soft	                        git reset --soft commit_hash	                        Keep changes in the working directory and the index
 --hard	                        git reset --hard commit_hash	                        Discard all changes
 --mixed	                        git reset --mixed commit_hash	                        Keep changes in the working directory
---keep	                        git reset --keep commit_hash	                        Keep uncommitted changesq
 
 git switch
 =================
