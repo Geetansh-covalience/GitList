@@ -186,9 +186,10 @@ Subcommand	                Example	                                             
 git reset
 =================
 Subcommand	                Example	                                                Description
---soft	                        git reset --soft HEAD~1	                                Uncommit changes, keep them staged
---mixed                 	git reset --mixed HEAD~1	                        Uncommit and unstage changes, keep them in working directory
---hard	                        git reset --hard HEAD~1	                                Uncommit and discard all changes
+--soft	                        git reset --soft commit_hash	                        Keep changes in the working directory and the index
+--hard	                        git reset --hard commit_hash	                        Discard all changes
+--mixed	                        git reset --mixed commit_hash	                        Keep changes in the working directory
+--keep	                        git reset --keep commit_hash	                        Keep uncommitted changesq
 
 git switch
 =================
@@ -229,6 +230,7 @@ Subcommand	                Example	                                             
 --tags	                        git push --tags origin main	                        Push all tags to the remote repository
 --force	                        git push --force origin main	                        Forcefully update the remote branch
 --delete	                git push --delete origin branch_name	                Delete a remote branch
+<<<<<<< HEAD
 
 git tag
 =================
@@ -242,3 +244,5 @@ Subcommand	                Example	                                             
 
 
 
+=======
+>>>>>>> 62876dd10dde66874d166f3cf317ee307c774489
