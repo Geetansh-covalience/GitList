@@ -69,30 +69,35 @@ Mode	        HEAD	                        Index	                Working Director
 
 27. 
 git add
+=================
 Subcommand	                Example	                                                Description
 -A	                        git add -A	                                        Add all changes to the staging area
 -p	                        git add -p	                                        Interactively add parts of files
 --interactive	                git add --interactive	                                Interactively stage files
 
 git mv
+=================
 Subcommand	                Example	                                                Description
 -f	                        git mv -f old.txt new.txt	                        Forcefully rename a file
 -k	                        git mv -k old.txt new.txt	                        Skip move or rename errors
 -n	                        git mv -n old.txt new.txt	                        Do not move or rename, just show what would be moved
 
 git restore
+=================
 Subcommand	                Example	                                                Description
 --staged	                git restore --staged file.txt	                        Restore a file from the staging area
 --source	                git restore --source commit_hash file.txt	        Restore from a given commit
 -W	                        git restore -W file.txt	                                Restore the working directory
 
 git rm
+=================
 Subcommand	                Example	                                                Description
 -f	                        git rm -f file.txt	                                Force removal
 -r	                        git rm -r folder/	                                Remove directories recursively
 --cached	                git rm --cached file.txt	                        Remove from the index only
 
 git bisect
+=================
 Subcommand	                Example	                                                Description
 start	                        git bisect start	                                Start binary search to find a buggy commit
 bad	                        git bisect bad	                                        Mark the current commit as bad
@@ -101,6 +106,7 @@ reset	                        git bisect reset	                                R
 visualize	                git bisect visualize	                                Visualize the bisect state
 
 git diff
+=================
 Subcommand	                Example	                                                Description
 --cached	                git diff --cached	                                Show changes between the index and the last commit
 --stat	                        git diff --stat	                                        Show statistics of changes
@@ -108,6 +114,7 @@ Subcommand	                Example	                                             
 --name-only	                git diff --name-only	                                Show file names only
 
 git grep
+=================
 Subcommand	                Example	                                                Description
 -i	                        git grep -i "pattern"	                                Search for a case-insensitive pattern in files
 -v	                        git grep -v "pattern"	                                Invert match
@@ -115,6 +122,7 @@ Subcommand	                Example	                                             
 -n	                        git grep -n "pattern"	                                Show line numbers
 
 git log
+=================
 Subcommand	                Example	                                                Description
 -p	                        git log -p	                                        Show patches
 --stat	                        git log --stat	                                        Show statistics
@@ -122,12 +130,14 @@ Subcommand	                Example	                                             
 --graph	                        git log --graph	                                        Show graphical representation
 
 git show
+=================
 Subcommand	                Example	                                                Description
 --stat	                        git show --stat commit_hash	                        Show statistics
 --pretty	                git show --pretty=short commit_hash	                Show commit details in a short format
 --format	                git show --format=raw commit_hash	                Show custom format
 
 git status
+=================
 Subcommand	                Example	                                                Description
 -s	                        git status -s	                                        Show a short status of the working tree
 -b	                        git status -b	                                        Show branch information
@@ -135,11 +145,13 @@ Subcommand	                Example	                                             
 -uno	                        git status -uno	                                        Do not show untracked files
 
 git backfill
+=================
 Subcommand	                Example	                                                Description
 --full	                        git backfill --full	                                Download all missing objects
 --missing	                git backfill --missing object_hash	                Download specific missing objects
 
 git branch
+=================
 Subcommand	                Example	                                                Description
 -v	                        git branch -v	                                        List all branches with verbose output
 -r	                        git branch -r	                                        List remote branches
@@ -147,6 +159,7 @@ Subcommand	                Example	                                             
 -d	                        git branch -d old_branch	                        Delete a branch
 
 git commit
+=================
 Subcommand	                Example	                                                Description
 -m	                        git commit -m "message"	                                Commit changes with a message
 --amend	                        git commit --amend	                                Amend the previous commit
@@ -154,6 +167,7 @@ Subcommand	                Example	                                             
 -a	                        git commit -a	                                        Automatically stage all modified files
 
 git merge
+=================
 Subcommand	                Example	                                                Description
 --no-ff	                        git merge --no-ff branch_name	                        Create a merge commit even if it could be fast-forwarded
 --squash	                git merge --squash branch_name	                        Merge but do not commit
@@ -161,6 +175,7 @@ Subcommand	                Example	                                             
 --abort	                        git merge --abort	                                Abort the merge process
 
 git rebase
+=================
 Subcommand	                Example	                                                Description
 -i	                        git rebase -i HEAD~3	                                Interactively rebase the last 3 commits
 -p	                        git rebase -p	                                        Preserve merges
@@ -169,8 +184,61 @@ Subcommand	                Example	                                             
 --continue	                git rebase --continue	                                Continue the rebase process
 
 git reset
+=================
 Subcommand	                Example	                                                Description
---soft	                        git reset --soft commit_hash	                        Keep changes in the working directory and the index
---hard	                        git reset --hard commit_hash	                        Discard all changes
---mixed	                        git reset --mixed commit_hash	                        Keep changes in the working directory
---keep	                        git reset --keep commit_hash	                        Keep uncommitted changesq
+--soft	                        git reset --soft HEAD~1	                                Uncommit changes, keep them staged
+--mixed                 	git reset --mixed HEAD~1	                        Uncommit and unstage changes, keep them in working directory
+--hard	                        git reset --hard HEAD~1	                                Uncommit and discard all changes
+
+git switch
+=================
+Subcommand	                Example	                                                Description
+-c	                        git switch -c new_branch	                        Create and switch to a new branch
+-	                        git switch -	                                        Switch to the previous branch
+-d	                        git switch -d old_branch	                        Delete a branch
+
+git tag
+=================
+Subcommand	                Example	                                                Description
+-l	                        git tag -l	                                        List all tags
+-d	                        git tag -d v1.0	                                        Delete a tag
+-a	                        git tag -a v1.0 -m "version 1.0"	                Create an annotated tag with a message
+-s	                        git tag -s v1.0 -m "Signed version 1.0"	                Create a signed tag
+-v	                        git tag -v v1.0	                                        Verify a tag
+
+git fetch
+=================
+Subcommand	                Example	                                                Description
+--all	                        git fetch --all	                                        Fetch updates from all remote repositories
+--prune	                        git fetch --prune	                                Remove references to deleted remote branches
+--tags	                        git fetch --tags	                                Fetch all tags from the remote repository
+--depth	                        git fetch --depth=1	                                Limit fetching to the specified number of commits
+
+git pull
+=================
+Subcommand	                Example	                                                Description
+--rebase	                git pull --rebase origin main	                        Fetch and reapply changes from a remote branch
+--no-ff	                        git pull --no-ff origin main	                        Create a merge commit even if it could be fast-forwarded
+--tags	                        git pull --tags origin main	                        Fetch and integrate all tags
+--verify	                git pull --verify	                                Verify the commit signatures
+
+git push
+=================
+Subcommand	                Example	                                                Description
+-u	                        git push -u origin main	                                Set the upstream branch
+--tags	                        git push --tags origin main	                        Push all tags to the remote repository
+--force	                        git push --force origin main	                        Forcefully update the remote branch
+--delete	                git push --delete origin branch_name	                Delete a remote branch
+
+git tag
+=================
+Subcommand	                Example	                                                Description
+-a	                        git tag -a v1.0 -m "Version 1.0"	                Create an annotated tag with a message
+-d	                        git tag -d v1.0	                                        Delete a tag locally
+-l	                        git tag -l "v1.*"	                                List tags matching the pattern
+--tags                          git push origin --tags                                  push all tags
+--sort	                        git tag --sort=-creatordate	                        List tags sorted by creation date in descending order
+
+
+
+
